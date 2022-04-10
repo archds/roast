@@ -26,8 +26,7 @@ impl Size {
 }
 
 fn notify(size: Size, dirname: &String) {
-    let message =
-        String::from(dirname) + " directory exceeded " + size.humansize().as_str() + " limit";
+    let message = String::from(dirname) + " directory exceeded " + size.humansize().as_str() + " limit";
 
     Toast::new("Microsoft.WindowsTerminal_8wekyb3d8bbwe!App")
         .title("Roast")
@@ -45,7 +44,7 @@ fn main() {
         panic!("Downloads path not found in {}!", path.to_str().unwrap())
     }
 
-    let downloads_folder_size = get_size(home_dir().unwrap().join("repos")).unwrap();
+    let downloads_folder_size = get_size(home_dir().unwrap().join("Downloads")).unwrap();
     let settings = load_settings();
 
     if downloads_folder_size > settings.size_limit.bytes {
