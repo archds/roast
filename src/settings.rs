@@ -9,7 +9,7 @@ pub struct Settings {
 }
 
 const INI_PATH: &str = "settings.ini";
-const DEFAULT_SIZE_LIMIT: u64 = 1024 * 1024;
+const DEFAULT_SIZE_LIMIT: u64 = 1000 * 1000 * 1000;
 
 pub fn load_settings() -> Settings {
     let settings = match Ini::load_from_file(INI_PATH) {

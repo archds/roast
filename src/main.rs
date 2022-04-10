@@ -1,3 +1,4 @@
+#![windows_subsystem = "windows"]
 mod settings;
 
 extern crate fs_extra;
